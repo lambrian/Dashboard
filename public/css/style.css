@@ -1,0 +1,47 @@
+body {
+  background-color: #222; }
+
+@font-face {
+  src: url("fonts/Square.ttf");
+  font-family: Square; }
+@font-face {
+  src: url("fonts/Squareo.ttf");
+  font-family: Squareo; }
+#date {
+  font-family: Square, sans-serif;
+  color: white; }
+
+.action-item {
+  width: 250px;
+  height: 60px;
+  position: relative;
+  background-color: transparent;
+  margin: 10px;
+  border-width: 2px;
+  border-style: solid; }
+  .action-item .title {
+    font-family: Square, sans-serif, sans-serif;
+    color: white;
+    text-align: right; }
+
+.normal {
+  border-color: #00FEFC; }
+
+.warning {
+  border-color: #FF290B; }
+
+.arrow-top-left, .arrow-top-left-cover {
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: inherit;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: -20px;
+  left: -20px; }
+
+.arrow-top-left-cover {
+  border: 21px solid transparent;
+  border-bottom-color: #222;
+  top: -23px;
+  left: -23px; }

@@ -1,0 +1,68 @@
+$base-color: #222;
+$future-block: Square, sans-serif;
+
+body {
+  background-color: $base-color;
+}
+
+@font-face {
+    src: url('fonts/Square.ttf');
+    font-family: Square;
+}
+
+@font-face {
+    src: url('fonts/Squareo.ttf');
+    font-family: Squareo;
+}
+
+#date {
+    font-family: $future-block;
+    color: white;
+}
+
+$action-item-bg: transparent;
+$action-item-border: 2;
+$corner-cut-side: 20;
+
+.action-item {
+  width: 250px;
+  height: 60px;
+  position: relative;
+  background-color: $action-item-bg;
+  margin: 10px;
+  border-width: $action-item-border + px;
+  border-style: solid;
+
+  .title {
+      font-family: $future-block, sans-serif;
+      color: white;
+      text-align: right;
+  }
+};
+
+.normal {
+  border-color: #00FEFC;
+}
+
+.warning {
+  border-color: #FF290B;
+}
+
+.arrow-top-left {
+  width: 0; 
+  height: 0; 
+  border: $corner-cut-side + px solid transparent;
+  border-bottom-color: inherit;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: -1 * $corner-cut-side + px;
+  left: -1 * $corner-cut-side + px;
+}
+
+.arrow-top-left-cover {
+  @extend .arrow-top-left;
+  border: $corner-cut-side + 1 + px solid transparent;
+  border-bottom-color: $base-color;
+  top: -1 * $corner-cut-side - $action-item-border - 1 + px;
+  left: -1 * $corner-cut-side - $action-item-border - 1 + px;
+}
