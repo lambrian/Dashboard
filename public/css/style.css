@@ -1,15 +1,22 @@
 body {
-  background-color: #222; }
+  background-color: #222222; }
 
 @font-face {
   src: url("fonts/Square.ttf");
   font-family: Square; }
+
 @font-face {
   src: url("fonts/Squareo.ttf");
   font-family: Squareo; }
+
+@font-face {
+  src: url "fonts/Zurich.ttf";
+  font-family: Zurich; }
+
 #date {
   font-family: Square, sans-serif;
-  color: white; }
+  color: white;
+  font-size: 45px; }
 
 .action-item {
   width: 250px;
@@ -19,6 +26,8 @@ body {
   margin: 10px;
   border-width: 2px;
   border-style: solid; }
+  .action-item p {
+    padding: 0 10px; }
   .action-item .title {
     font-family: Square, sans-serif, sans-serif;
     color: white;
@@ -30,18 +39,32 @@ body {
 .warning {
   border-color: #FF290B; }
 
-.arrow-top-left, .arrow-top-left-cover {
+.arrow-top-left, .arrow-top-left-cover, .arrow-bottom-right-cover, .arrow-bottom-right {
   width: 0;
   height: 0;
-  border: 20px solid transparent;
+  border: 12px solid transparent;
   border-bottom-color: inherit;
   transform: rotate(-45deg);
   position: absolute;
-  top: -20px;
-  left: -20px; }
+  top: -12px;
+  left: -12px; }
 
-.arrow-top-left-cover {
-  border: 21px solid transparent;
-  border-bottom-color: #222;
-  top: -23px;
-  left: -23px; }
+.arrow-top-left-cover, .arrow-bottom-right-cover {
+  border: 13px solid transparent;
+  border-bottom-color: #222222;
+  top: -15px;
+  left: -15px; }
+
+.arrow-bottom-right {
+  transform: rotate(135deg);
+  top: auto;
+  left: auto;
+  bottom: -12px;
+  right: -12px; }
+
+.arrow-bottom-right-cover {
+  transform: rotate(135deg);
+  top: auto;
+  left: auto;
+  bottom: -15px;
+  right: -15px; }

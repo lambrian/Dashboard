@@ -15,14 +15,20 @@ body {
     font-family: Squareo;
 }
 
+@font-face {
+  src: url ('fonts/Zurich.ttf');
+  font-family: Zurich;
+}
+
 #date {
     font-family: $future-block;
     color: white;
+    font-size: 45px;
 }
 
 $action-item-bg: transparent;
 $action-item-border: 2;
-$corner-cut-side: 20;
+$corner-cut-side: 12;
 
 .action-item {
   width: 250px;
@@ -33,6 +39,9 @@ $corner-cut-side: 20;
   border-width: $action-item-border + px;
   border-style: solid;
 
+  p {
+    padding: 0 10px;
+  }
   .title {
       font-family: $future-block, sans-serif;
       color: white;
@@ -65,4 +74,23 @@ $corner-cut-side: 20;
   border-bottom-color: $base-color;
   top: -1 * $corner-cut-side - $action-item-border - 1 + px;
   left: -1 * $corner-cut-side - $action-item-border - 1 + px;
+}
+
+.arrow-bottom-right {
+  @extend .arrow-top-left;
+  transform: rotate(135deg);
+  top: auto;
+  left: auto;
+  bottom: -1 * $corner-cut-side + px;
+  right: -1 * $corner-cut-side + px;
+
+}
+
+.arrow-bottom-right-cover {
+  @extend .arrow-top-left-cover;
+  transform: rotate(135deg);
+  top: auto;
+  left: auto;
+  bottom: -1 * $corner-cut-side - $action-item-border - 1 + px;
+  right: -1 * $corner-cut-side - $action-item-border - 1 + px;
 }

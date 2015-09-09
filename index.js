@@ -6,7 +6,6 @@ var express = require ('express'),
     TOKENS  = require ('./API_TOKENS'),
     app     = express ();
 
-
 app.set ('view engine', 'hbs');
 app.use(express.static('public'));
 
@@ -23,7 +22,6 @@ app.get ('/', function (req, res) {
         }
     }, function (err, resp, body) {
         var tasks = JSON.parse (body);
-        console.log (tasks);
         var overdue = tasks[0].data;
         var current = [];
         for (var i = 1; i < tasks.length; i++) {
@@ -31,13 +29,11 @@ app.get ('/', function (req, res) {
                 current.push (tasks[i].data[j]);
             }
         }
-        
 
         res.render ('index', { 
             'overdue': overdue,
             'current': current
         }, function (err, html) {
-            console.log (err);
             res.send (html);
         });
     });
