@@ -1,5 +1,4 @@
 var express = require ('express'),
-    API_TOKENS = require ('./API_TOKENS'),
     app     = express ();
 
 app.set ('view engine', 'hbs');
