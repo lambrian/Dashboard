@@ -6,78 +6,47 @@ body {
 }
 
 @font-face {
-    src: url('fonts/Square.ttf');
-    font-family: Square;
+  src: url('fonts/Square.ttf');
+  font-family: Square;
 }
 
 @font-face {
-    src: url('fonts/Squareo.ttf');
-    font-family: Squareo;
+  src: url('fonts/Squareo.ttf');
+  font-family: Squareo;
 }
 
 @font-face {
-  src: url ('fonts/Zurich.ttf');
-  font-family: Zurich;
+  src: url ('fonts/PhenixAmerican.ttf');
+  font-family: PhenixAmerican;
 }
 
-#date {
-    font-family: $future-block;
-    color: white;
-    font-size: 45px;
-}
-
-$action-item-bg: transparent;
-$action-item-border: 2;
 $corner-cut-side: 12;
+$action-item-border: 2;
 
-.action-item {
-  width: 250px;
-  height: 60px;
-  position: relative;
-  background-color: $action-item-bg;
-  margin: 10px;
-  border-width: $action-item-border + px;
-  border-style: solid;
 
-  p {
-    padding: 0 10px;
-  }
-  .title {
-      font-family: $future-block, sans-serif;
-      color: white;
-      text-align: right;
-  }
-};
+/* 0.1 SLANTED CORNERS */
 
-.normal {
-  border-color: #00FEFC;
-}
-
-.warning {
-  border-color: #FF290B;
-}
-
-.arrow-top-left {
+@mixin slant-tl ($corner-cut-side, $border) {
   width: 0; 
-  height: 0; 
-  border: $corner-cut-side + px solid transparent;
-  border-bottom-color: inherit;
+  height: 0;
   transform: rotate(-45deg);
   position: absolute;
+  border: $corner-cut-side + px solid transparent;
   top: -1 * $corner-cut-side + px;
   left: -1 * $corner-cut-side + px;
+  border-bottom-color: inherit;
 }
 
-.arrow-top-left-cover {
-  @extend .arrow-top-left;
+@mixin slant-tl-cover ($corner-cut-side, $border) {
+  @extend .slant-tl;
   border: $corner-cut-side + 1 + px solid transparent;
   border-bottom-color: $base-color;
-  top: -1 * $corner-cut-side - $action-item-border - 1 + px;
-  left: -1 * $corner-cut-side - $action-item-border - 1 + px;
+  top: -1 * $corner-cut-side - $border - 1 + px;
+  left: -1 * $corner-cut-side - $border - 1 + px;
 }
 
-.arrow-bottom-right {
-  @extend .arrow-top-left;
+@mixin slant-br ($corner-cut-side, $border) {
+  @extend .slant-tl;
   transform: rotate(135deg);
   top: auto;
   left: auto;
@@ -86,11 +55,135 @@ $corner-cut-side: 12;
 
 }
 
-.arrow-bottom-right-cover {
-  @extend .arrow-top-left-cover;
-  transform: rotate(135deg);
-  top: auto;
-  left: auto;
+@mixin slant-br-cover ($corner-cut-side, $border) {
+  @extend .slant-br;
+  border: $corner-cut-side + 1 + px solid transparent;
+  border-bottom-color: $base-color;
   bottom: -1 * $corner-cut-side - $action-item-border - 1 + px;
   right: -1 * $corner-cut-side - $action-item-border - 1 + px;
+}
+
+
+/* 1.0 TODOIST LIST */
+
+$action-item-bg: transparent;
+$todoist-slant-size: 15;
+$todoist-border-width: 2;
+
+.todoist {
+  list-style-type: none;
+  float: left;
+
+  .slant-tl {
+    @include slant-tl ($todoist-slant-size, $todoist-border-width);
+  }
+
+  .slant-tl-cover {
+    @include slant-tl-cover ($todoist-slant-size, $todoist-border-width);
+  }
+
+  .slant-br {
+    @include slant-br ($todoist-slant-size, $todoist-border-width);
+  }
+
+  .slant-br-cover {
+    @include slant-br-cover ($todoist-slant-size, $todoist-border-width);
+  }
+
+  .action-item {
+    width: 250px;
+    height: 60px;
+    position: relative;
+    background-color: $action-item-bg;
+    margin: 10px;
+    border-width: $action-item-border + px;
+    border-style: solid;
+
+    p {
+      padding: 0 10px;
+    }
+
+    .title {
+      font-family: $future-block, sans-serif;
+      text-align: right;
+    }
+  };
+
+  $item-normal: #00FEFC;
+  $item-warning: #FF290B;
+  .normal {
+    border-color: $item-normal;
+    color: $item-normal;
+  }
+
+  .warning {
+    border-color: $item-warning;
+    color: $item-warning;
+  }
+}
+
+/* 2.0 CLOCK */
+
+#date {
+  font-family: $future-block;
+  color: white;
+  font-size: 45px;
+}
+
+/* 3.0 WEATHER */
+
+$weather-slant-size: 30;
+$weather-border-width: 2;
+
+.weather {
+
+  position: relative;
+  border: $weather-border-width + px solid white;
+  font-family: 'Square';
+  color: white;
+  padding: 40px 20px 160px 20px;
+  float: right;
+  margin: 0 20px;
+
+  .slant-tl {
+    @include slant-tl ($weather-slant-size, $weather-border-width);
+  }
+
+  .slant-tl-cover {
+    @include slant-tl-cover ($weather-slant-size, $weather-border-width);
+  }
+
+  .slant-br {
+    @include slant-br ($weather-slant-size, $weather-border-width);
+  }
+
+  .slant-br-cover {
+    @include slant-br-cover ($weather-slant-size, $weather-border-width);
+  }
+
+
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .city-name {
+    font-family: Squareo;
+    font-size: 30px;
+  }
+
+  .temp {
+    font-family: PhenixAmerican;
+    font-size: 135px;
+    letter-spacing: -3;
+
+    .symbol {
+      font-size: 80px;
+      position: relative;
+      top: -40px;
+      left: -16px;
+      letter-spacing: -10;
+    }
+  }
 }

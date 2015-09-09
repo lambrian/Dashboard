@@ -1,0 +1,26 @@
+<ul class="todoist">
+  {{#each overdue}}
+  <li>
+    <div class="action-item warning">
+      <div class="slant-tl"></div>
+      <div class="slant-tl-cover"></div>
+      <div class="slant-br"></div>
+      <div class="slant-br-cover"></div>
+      <p class="title">{{ content }}</p>
+      <p class="date"></p>
+    </div>
+  </li>
+  {{/each}}
+  {{#each current}}
+  <li>
+    <div class="action-item normal">
+      <div class="slant-tl"></div>
+      <div class="slant-tl-cover"></div>
+      <div class="slant-br"></div>
+      <div class="slant-br-cover"></div>
+      <p class="title">{{ content }}</p>
+      <p class="date"></p>
+    </div>
+  </li>
+  {{/each}}
+</ul>

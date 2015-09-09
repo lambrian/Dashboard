@@ -6,40 +6,13 @@
 
 </head>
 <body>
-  <p id="date"></p>
-  <ul>
-  {{#each overdue}}
-  <li>
-  <div class="action-item warning">
-    <div class="arrow-top-left"></div>
-    <div class="arrow-top-left-cover"></div>
-    <div class="arrow-bottom-right"></div>
-    <div class="arrow-bottom-right-cover"></div>
-    <p class="title">{{ content }}<p>
-      <p class="date"></p>
-    </div>
-  </li>
-    {{/each}}
-    {{#each current}}
-    <li>
-    <div class="action-item normal">
-      <div class="arrow-top-left"></div>
-      <div class="arrow-top-left-cover"></div>
-      <div class="arrow-bottom-right"></div>
-      <div class="arrow-bottom-right-cover"></div>
-      <p class="title">{{ content }}<p>
-        <p class="date"></p>
-      </div>
-    </li>
-      {{/each}}
-    </ul>
-      <div class="weather"></div>
+  {{{date}}}    
+  {{{todoist}}}
+  {{{weather}}}
 
-
-
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-      <script src="http://momentjs.com/downloads/moment.js"></script>
-      <script src="js/main.js"></script>
-    </body>
-    </html>
+  {{!-- Scripts --}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://momentjs.com/downloads/moment.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -10,61 +10,112 @@ body {
   font-family: Squareo; }
 
 @font-face {
-  src: url "fonts/Zurich.ttf";
-  font-family: Zurich; }
+  src: url "fonts/PhenixAmerican.ttf";
+  font-family: PhenixAmerican; }
 
+/* 0.1 SLANTED CORNERS */
+/* 1.0 TODOIST LIST */
+.todoist {
+  list-style-type: none;
+  float: left; }
+  .todoist .slant-tl, .todoist .slant-tl-cover, .todoist .slant-br, .todoist .slant-br-cover {
+    width: 0;
+    height: 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    border: 15px solid transparent;
+    top: -15px;
+    left: -15px;
+    border-bottom-color: inherit; }
+  .todoist .slant-tl-cover {
+    border: 16px solid transparent;
+    border-bottom-color: #222222;
+    top: -18px;
+    left: -18px; }
+  .todoist .slant-br, .todoist .slant-br-cover {
+    transform: rotate(135deg);
+    top: auto;
+    left: auto;
+    bottom: -15px;
+    right: -15px; }
+  .todoist .slant-br-cover {
+    border: 16px solid transparent;
+    border-bottom-color: #222222;
+    bottom: -18px;
+    right: -18px; }
+  .todoist .action-item {
+    width: 250px;
+    height: 60px;
+    position: relative;
+    background-color: transparent;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid; }
+    .todoist .action-item p {
+      padding: 0 10px; }
+    .todoist .action-item .title {
+      font-family: Square, sans-serif, sans-serif;
+      text-align: right; }
+  .todoist .normal {
+    border-color: #00fefc;
+    color: #00fefc; }
+  .todoist .warning {
+    border-color: #ff290b;
+    color: #ff290b; }
+
+/* 2.0 CLOCK */
 #date {
   font-family: Square, sans-serif;
   color: white;
   font-size: 45px; }
 
-.action-item {
-  width: 250px;
-  height: 60px;
+/* 3.0 WEATHER */
+.weather {
   position: relative;
-  background-color: transparent;
-  margin: 10px;
-  border-width: 2px;
-  border-style: solid; }
-  .action-item p {
-    padding: 0 10px; }
-  .action-item .title {
-    font-family: Square, sans-serif, sans-serif;
-    color: white;
-    text-align: right; }
-
-.normal {
-  border-color: #00FEFC; }
-
-.warning {
-  border-color: #FF290B; }
-
-.arrow-top-left, .arrow-top-left-cover, .arrow-bottom-right-cover, .arrow-bottom-right {
-  width: 0;
-  height: 0;
-  border: 12px solid transparent;
-  border-bottom-color: inherit;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: -12px;
-  left: -12px; }
-
-.arrow-top-left-cover, .arrow-bottom-right-cover {
-  border: 13px solid transparent;
-  border-bottom-color: #222222;
-  top: -15px;
-  left: -15px; }
-
-.arrow-bottom-right {
-  transform: rotate(135deg);
-  top: auto;
-  left: auto;
-  bottom: -12px;
-  right: -12px; }
-
-.arrow-bottom-right-cover {
-  transform: rotate(135deg);
-  top: auto;
-  left: auto;
-  bottom: -15px;
-  right: -15px; }
+  border: 2px solid white;
+  font-family: 'Square';
+  color: white;
+  padding: 40px 20px 160px 20px;
+  float: right;
+  margin: 0 20px; }
+  .weather .slant-tl, .weather .slant-tl-cover, .weather .slant-br, .weather .slant-br-cover {
+    width: 0;
+    height: 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    border: 30px solid transparent;
+    top: -30px;
+    left: -30px;
+    border-bottom-color: inherit; }
+  .weather .slant-tl-cover {
+    border: 31px solid transparent;
+    border-bottom-color: #222222;
+    top: -33px;
+    left: -33px; }
+  .weather .slant-br, .weather .slant-br-cover {
+    transform: rotate(135deg);
+    top: auto;
+    left: auto;
+    bottom: -30px;
+    right: -30px; }
+  .weather .slant-br-cover {
+    border: 31px solid transparent;
+    border-bottom-color: #222222;
+    bottom: -33px;
+    right: -33px; }
+  .weather p {
+    margin: 0;
+    padding: 0; }
+  .weather .city-name {
+    font-family: Squareo;
+    font-size: 30px; }
+  .weather .temp {
+    font-family: PhenixAmerican;
+    font-size: 135px;
+    letter-spacing: -3; }
+    .weather .temp .symbol {
+      font-size: 80px;
+      position: relative;
+      top: -40px;
+      left: -16px;
+      letter-spacing: -10; }

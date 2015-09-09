@@ -1,43 +1,34 @@
 var express = require ('express'),
-    http    = require ('http-request'),
-    path    = require ('path'),
-    assert  = require ('assert'),
-    request = require ('request'),
-    TOKENS  = require ('./API_TOKENS'),
+    API_TOKENS = require ('./API_TOKENS'),
     app     = express ();
 
 app.set ('view engine', 'hbs');
 app.use(express.static('public'));
 
-app.get ('/', function (req, res) {
-    var requestDates = ['overdue'];
-    for (var i = -1; i < 7; i++) {
-        var d = new Date();
-        d.setDate (d.getDate() + i);
-        requestDates.push (d);
-    }
-    request.get ({url: 'https://todoist.com/API/v6/query',
-        qs : {   'token': TOKENS.TODOIST, 
-            'queries': JSON.stringify(requestDates)
-        }
-    }, function (err, resp, body) {
-        var tasks = JSON.parse (body);
-        var overdue = tasks[0].data;
-        var current = [];
-        for (var i = 1; i < tasks.length; i++) {
-            for (var j = 0; j < tasks[i].data.length; j++) {
-                current.push (tasks[i].data[j]);
-            }
-        }
+var dataEndpoints = [
+        require ('./data/todoist.js'),
+        require ('./data/weather.js'),
+        require ('./data/clock.js')
+    ];
 
-        res.render ('index', { 
-            'overdue': overdue,
-            'current': current
-        }, function (err, html) {
-            res.send (html);
-        });
-    });
-});
+var generateDashboard = function (req, res) {
+    var aggregatedData = {};
+    var semaphore = dataEndpoints.length;
+    var completionCallback = function () {
+        semaphore -= 1;
+        if (semaphore == 0) {
+            res.render ('index', aggregatedData, function (err, html) {
+                res.send (html);
+            });
+        }
+    }
+
+    for (var i = 0; i < dataEndpoints.length; i++) {
+        dataEndpoints[i](app, aggregatedData, completionCallback);
+    }
+}
+
+app.get ('/', generateDashboard);
 
 var server = app.listen (process.env.PORT || 3000, function () {
     var host = server.address().address;
