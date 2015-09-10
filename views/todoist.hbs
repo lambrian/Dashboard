@@ -1,19 +1,7 @@
 <ul class="todoist">
-  {{#each overdue}}
+  {{#each tasks}}
   <li>
-    <div class="action-item warning">
-      <div class="slant-tl"></div>
-      <div class="slant-tl-cover"></div>
-      <div class="slant-br"></div>
-      <div class="slant-br-cover"></div>
-      <p class="title">{{ content }}</p>
-      <p class="date"> {{ humanTime }}</p>
-    </div>
-  </li>
-  {{/each}}
-  {{#each current}}
-  <li>
-    <div class="action-item normal">
+    <div class="action-item {{type}}">
       <div class="slant-tl"></div>
       <div class="slant-tl-cover"></div>
       <div class="slant-br"></div>

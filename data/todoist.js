@@ -33,25 +33,21 @@ var getTodoistItems = function (app, dataStore, callback) {
         }
     }, function (err, resp, body) {
 
-        var tasks = JSON.parse (body);
+        var groups = JSON.parse (body);
         var now = moment().startOf('day');
-        for (var i = 0; i < tasks[0].data.length; i++) {
-            var date = moment (tasks[0].data[i]['due_date'], 'ddd, DD MMM YYYY ZZ').startOf('day');
-            tasks[0].data[i]['humanTime'] = getHumanTime(date.diff(now, 'days'));
-        }
-        var overdue = tasks[0].data;
-        var current = [];
-        for (var i = 1; i < tasks.length; i++) {
-            for (var j = 0; j < tasks[i].data.length; j++) {
-                var date = moment (tasks[i].data[j]['due_date'], 'ddd, DD MMM YYYY ZZ').startOf('day');
-                tasks[i].data[j]['humanTime'] = getHumanTime(date.diff(now, 'days'));
-                current.push (tasks[i].data[j]);
+        var tasks = [];
+        for (var dateI = 0; dateI < groups.length; dateI++) {
+            for (var taskI = 0; taskI < groups[dateI].data.length; taskI++) {
+                var currTask = groups[dateI].data[taskI];
+                var date = moment (currTask['due_date'], 'ddd, DD MMM YYYY Z').subtract(7, 'hours').startOf('day');
+                currTask['humanTime'] = getHumanTime(date.diff (now, 'days'));
+                currTask['type'] = (currTask['humanTime'].match(/.*ago/)) ? 'warning' : 'normal';
+                tasks.push (currTask);
             }
         }
 
         app.render ('todoist', {
-            overdue: overdue, 
-            current: current
+            tasks: tasks
         }, function (err, html) {
             if (err) console.log (err);
             dataStore['todoist'] = html;
