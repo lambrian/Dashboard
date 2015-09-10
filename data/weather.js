@@ -1,22 +1,36 @@
 var request = require ('request'),
     debug_json = require ('./weather.json'),
     config = require ('../config.json');
-var getWeatherReport = function (app, dataStore, callback) {
 
+var cachedAPI = {
+    response: null,
+    time: null
+};
+
+var getWeatherReport = function (app, dataStore, callback) {
     if (config.DEBUG) {
         generateWeatherModuleFunc(app, dataStore, callback)(null, null, JSON.stringify(debug_json));
     } else {
-
-        request.get ({
-            url: 'http://api.wunderground.com/api/c6d9a55c86081a82/conditions/q/CA/San_Francisco.json'
-
-        }, generateWeatherModuleFunc(app, dataStore, callback));
+        if (new Date() - cachedAPI.time < (120 * 1000)) {
+            console.log ('Cache valid. Using cached API response');
+            generateWeatherModuleFunc(app, dataStore, callback)(null, null, JSON.stringify(cachedAPI.response));
+        } else {
+            console.log ('Refreshing cache.');
+            request.get ({
+                url: 'http://api.wunderground.com/api/c6d9a55c86081a82/conditions/q/CA/San_Francisco.json'
+            }, generateWeatherModuleFunc(app, dataStore, callback));
+        }
     }
 }
 
 var generateWeatherModuleFunc = function (app, dataStore, callback) {
     return function (err, resp, body) {
         body = JSON.parse(body);
+
+        if (!config.DEBUG) {
+            cachedAPI.response = body;
+            cachedAPI.time = new Date();
+        }
 
         co = body.current_observation;
         body['icons'] = {};
