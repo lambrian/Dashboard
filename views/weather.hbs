@@ -8,5 +8,19 @@
   <p class="temp"> {{main.temp}} <span class="symbol"> &deg; </span>F</p>
   <p class="status"> Status: {{weather.0.main}}</p>
   <p class="humidity"> Humidity: {{main.humidity}}</p>
+  <ul class="icons">
+    {{#each icons}}
+    <li>
+      <div class="icon-square {{this}}">
+        <div class="{{@key}}"></div>
+      </div>
+  </li>
+    {{/each}}  
+  </ul>
+{{!-- 
+Sun
+Cloud
+Rain
+Wind --}}
 
 </div>
