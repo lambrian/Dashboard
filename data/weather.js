@@ -1,11 +1,10 @@
 var request = require ('request'),
     TOKENS  = require ('./API_TOKENS'),
     debug_json = require ('./weather.json'),
-    DEBUG = false;
-
+    config = require ('../config.json');
 var getWeatherReport = function (app, dataStore, callback) {
 
-    if (DEBUG) {
+    if (config.DEBUG) {
         generateWeatherModuleFunc(app, dataStore, callback)(null, null, JSON.stringify(debug_json));
     } else {
 
