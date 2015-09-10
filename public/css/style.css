@@ -1,5 +1,5 @@
 body {
-  background-color: #222222;
+  background-color: #292b33;
 }
 
 @font-face {
@@ -35,7 +35,7 @@ body {
 }
 .todoist .slant-tl-cover {
   border: 16px solid transparent;
-  border-bottom-color: #222222;
+  border-bottom-color: #292b33;
   top: -18px;
   left: -18px;
 }
@@ -48,7 +48,7 @@ body {
 }
 .todoist .slant-br-cover {
   border: 16px solid transparent;
-  border-bottom-color: #222222;
+  border-bottom-color: #292b33;
   bottom: -18px;
   right: -18px;
 }
@@ -113,7 +113,7 @@ body {
 }
 .weather .slant-tl-cover {
   border: 31px solid transparent;
-  border-bottom-color: #222222;
+  border-bottom-color: #292b33;
   top: -33px;
   left: -33px;
 }
@@ -126,7 +126,7 @@ body {
 }
 .weather .slant-br-cover {
   border: 31px solid transparent;
-  border-bottom-color: #222222;
+  border-bottom-color: #292b33;
   bottom: -33px;
   right: -33px;
 }
