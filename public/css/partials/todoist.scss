@@ -51,12 +51,12 @@ $todoist-border-width: 2;
   $item-normal: #0cc;
   $item-warning: #f50;
   .normal {
-    border-color: $item-normal;
-    color: $item-normal;
+    border-color: #9fc;
+    color: #0cc;
   }
 
   .warning {
-    border-color: $item-warning;
-    color: $item-warning;
+    border-color: #f90;
+    color: #f50;
   }
 }

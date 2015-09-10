@@ -4,12 +4,15 @@ body {
 @font-face {
   src: url("fonts/Square.ttf");
   font-family: Square; }
+
 @font-face {
   src: url("fonts/Squareo.ttf");
   font-family: Squareo; }
+
 @font-face {
   src: url "fonts/PhenixAmerican.ttf";
   font-family: PhenixAmerican; }
+
 /* 0.1 SLANTED CORNERS */
 /* 1.0 TODOIST LIST */
 .todoist {
@@ -57,10 +60,10 @@ body {
       font-size: 12px;
       margin-top: -10px; }
   .todoist .normal {
-    border-color: #0cc;
+    border-color: #9fc;
     color: #0cc; }
   .todoist .warning {
-    border-color: #f50;
+    border-color: #f90;
     color: #f50; }
 
 /* 2.0 CLOCK */
