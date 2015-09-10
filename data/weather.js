@@ -6,7 +6,6 @@ var getWeatherReport = function (app, dataStore, callback) {
         url: 'http://api.wunderground.com/api/c6d9a55c86081a82/conditions/q/CA/San_Francisco.json'
 
     }, function (err, resp, body) {
-        console.log (body);
         body = JSON.parse(body);
         body['icons'] = {};
 
