@@ -1,5 +1,4 @@
 var request = require ('request'),
-    TOKENS  = require ('./API_TOKENS'),
     debug_json = require ('./weather.json'),
     config = require ('../config.json');
 var getWeatherReport = function (app, dataStore, callback) {

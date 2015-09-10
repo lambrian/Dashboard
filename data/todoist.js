@@ -1,6 +1,6 @@
 var request = require ('request'),
     moment  = require ('moment'),
-    TOKENS  = require ('./API_TOKENS'),
+    TOKENS  = require ('./API_TOKENS.json'),
     debug_json = require ('./todoist.json'),
     config = require ('../config.json');
 
