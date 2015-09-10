@@ -162,7 +162,7 @@ body {
   margin: 0 10px 10px 0;
   float: left;
 }
-.weather .icons .icon-square .icon, .weather .icons .icon-square .sun, .weather .icons .icon-square .cloud, .weather .icons .icon-square .rain, .weather .icons .icon-square .wind, .weather .icons .icon-square .thunderstorm {
+.weather .icons .icon-square .icon, .weather .icons .icon-square .sun, .weather .icons .icon-square .cloud, .weather .icons .icon-square .rain, .weather .icons .icon-square .wind, .weather .icons .icon-square .thunderstorm, .weather .icons .icon-square .fog {
   background: url("../img/weather.png");
   height: 50px;
   width: 50px;
@@ -189,6 +189,10 @@ body {
 .weather .icons .icon-square .thunderstorm {
   background-position: 158px 296px;
   width: 39px;
+}
+.weather .icons .icon-square .fog {
+  background-position: -78px -51px;
+  width: 41px;
 }
 .weather .icons .inactive {
   opacity: 0.3;
