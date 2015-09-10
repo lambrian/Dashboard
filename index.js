@@ -5,9 +5,7 @@ app.set ('view engine', 'hbs');
 app.use(express.static('public'));
 
 var dataEndpoints = [
-        require ('./data/todoist.js'),
-        require ('./data/weather.js'),
-        require ('./data/clock.js')
+        require ('./data/weather.js')
     ];
 
 var generateDashboard = function (req, res) {
