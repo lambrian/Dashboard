@@ -101,16 +101,21 @@ $todoist-border-width: 2;
 
     p {
       padding: 0 10px;
+      font-family: $future-block, sans-serif;
     }
 
     .title {
-      font-family: $future-block, sans-serif;
       text-align: right;
+    }
+
+    .date {
+      font-size: 12px;
+      margin-top: -10px;
     }
   };
 
-  $item-normal: #00FEFC;
-  $item-warning: #FF290B;
+  $item-normal: #0cc;
+  $item-warning: #f50;
   .normal {
     border-color: $item-normal;
     color: $item-normal;
@@ -128,6 +133,8 @@ $todoist-border-width: 2;
   font-family: $future-block;
   color: white;
   font-size: 45px;
+  float: left;
+  display: none;
 }
 
 /* 3.0 WEATHER */
