@@ -3,11 +3,11 @@
   <div class="slant-tl-cover"></div>
   <div class="slant-br"></div>
   <div class="slant-br-cover"></div>
-  <p class="city-name">{{name}}</p>
+  <p class="city-name">{{current_observation.display_location.city}}</p>
   {{!-- <p class="coord">{{coord.lon}} , {{coord.lat}}</p> --}}
-  <p class="temp"> {{main.temp}} <span class="symbol"> &deg; </span>F</p>
-  <p class="status"> Status: {{weather.0.main}}</p>
-  <p class="humidity"> Humidity: {{main.humidity}}</p>
+  <p class="temp"> {{current_observation.temp_f}} <span class="symbol"> &deg; </span>F</p>
+  <p class="status"> Status: {{current_observation.weather}}</p>
+  <p class="humidity"> Humidity: {{current_observation.relative_humidity}}</p>
   <ul class="icons">
     {{#each icons}}
     <li>

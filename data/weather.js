@@ -3,19 +3,18 @@ var request = require ('request'),
 
 var getWeatherReport = function (app, dataStore, callback) {
     request.get ({
-        url: 'http://api.openweathermap.org/data/2.5/weather', 
-        qs: {
-            'zip': TOKENS.WEATHER_LOCATION,
-            'units': 'Imperial'
-        }
+        url: 'http://api.wunderground.com/api/c6d9a55c86081a82/conditions/q/CA/San_Francisco.json'
+
     }, function (err, resp, body) {
+        console.log (body);
         body = JSON.parse(body);
         body['icons'] = {};
-        body['icons']['sun'] = (body['weather'][0].main === 'Clear') ? 'active' : 'inactive';
-        body['icons']['cloud'] = (body['weather'][0].main === 'Clouds') ? 'active' : 'inactive';
-        body['icons']['rain'] = (body['weather'][0].main === 'Rain') ? 'active' : 'inactive';
-        body['icons']['wind'] = (body['wind']['speed'] >= 3) ? 'active' : 'inactive';
-        body['icons']['thunderstorm'] = (body['weather'][0].main === 'Thunderstorm') ? 'active' : 'inactive';
+
+        body['icons']['sun'] = (body.current_observation.weather === 'Clear') ? 'active' : 'inactive';
+        body['icons']['cloud'] = (body.current_observation.weather === 'Clouds') ? 'active' : 'inactive';
+        body['icons']['rain'] = (body.current_observation.weather === 'Rain') ? 'active' : 'inactive';
+        body['icons']['wind'] = (body.current_observation.wind_mph >= 3) ? 'active' : 'inactive';
+        body['icons']['thunderstorm'] = (body.current_observation.weather === 'Thunderstorm') ? 'active' : 'inactive';
 
         app.render ('weather', body, function (err, html) {
             if (err) console.log (err);
