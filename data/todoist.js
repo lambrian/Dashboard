@@ -1,37 +1,27 @@
 var request = require ('request'),
-moment  = require ('moment'),
-TOKENS  = require ('./API_TOKENS');
+    moment  = require ('moment'),
+    TOKENS  = require ('./API_TOKENS'),
+    debug_json = require ('./todoist.json'),
+    config = require ('../config.json');
 
 var getHumanTime = function (diff) {
     if (diff === 0)
         return 'Today';
 
-
     var str = '' + Math.abs(diff) + ' day';
     if (Math.abs(diff) > 1)
         str += 's'
-    if (diff < 0) {
-        str += ' ago';
-    } else {
-        str = 'In ' + str;
-    }
+            if (diff < 0) {
+                str += ' ago';
+            } else {
+                str = 'In ' + str;
+            }
 
     return str;
 }
 
-var getTodoistItems = function (app, dataStore, callback) {
-    var requestDates = ['overdue'];
-    for (var i = -1; i < 7; i++) {
-        var d = new Date();
-        d.setDate (d.getDate() + i);
-        requestDates.push (d);
-    }
-    request.get ({url: 'https://todoist.com/API/v6/query',
-        qs : {   
-            'token': TOKENS.TODOIST, 
-            'queries': JSON.stringify(requestDates)
-        }
-    }, function (err, resp, body) {
+var todoistModuleGeneratorFunc = function (app, dataStore, callback) {
+    return function (err, resp, body) {
 
         var groups = JSON.parse (body);
         var now = moment().startOf('day');
@@ -53,7 +43,26 @@ var getTodoistItems = function (app, dataStore, callback) {
             dataStore['todoist'] = html;
             callback();
         })
-    });
+    };
+};
+
+var getTodoistItems = function (app, dataStore, callback) {
+    if (config.DEBUG) {
+        todoistModuleGeneratorFunc(app, dataStore, callback)(null, null, JSON.stringify(debug_json));
+    } else {
+        var requestDates = ['overdue'];
+        for (var i = -1; i < 7; i++) {
+            var d = new Date();
+            d.setDate (d.getDate() + i);
+            requestDates.push (d);
+        }
+        request.get ({url: 'https://todoist.com/API/v6/query',
+            qs : {   
+                'token': TOKENS.TODOIST, 
+            'queries': JSON.stringify(requestDates)
+            }
+        }, todoistModuleGeneratorFunc(app, dataStore, callback));
+    }
 };
 
 module.exports = getTodoistItems;
