@@ -1,0 +1,62 @@
+/* 1.0 TODOIST LIST */
+
+$action-item-bg: transparent;
+$todoist-slant-size: 15;
+$todoist-border-width: 2;
+
+.todoist {
+  list-style-type: none;
+  float: left;
+
+  .slant-tl {
+    @include slant-tl ($todoist-slant-size, $todoist-border-width);
+  }
+
+  .slant-tl-cover {
+    @include slant-tl-cover ($todoist-slant-size, $todoist-border-width);
+  }
+
+  .slant-br {
+    @include slant-br ($todoist-slant-size, $todoist-border-width);
+  }
+
+  .slant-br-cover {
+    @include slant-br-cover ($todoist-slant-size, $todoist-border-width);
+  }
+
+  .action-item {
+    width: 250px;
+    height: 60px;
+    position: relative;
+    background-color: $action-item-bg;
+    margin: 10px;
+    border-width: $todoist-border-width + px;
+    border-style: solid;
+
+    p {
+      padding: 0 10px;
+      font-family: $future-block, sans-serif;
+    }
+
+    .title {
+      text-align: right;
+    }
+
+    .date {
+      font-size: 12px;
+      margin-top: -10px;
+    }
+  };
+
+  $item-normal: #0cc;
+  $item-warning: #f50;
+  .normal {
+    border-color: $item-normal;
+    color: $item-normal;
+  }
+
+  .warning {
+    border-color: $item-warning;
+    color: $item-warning;
+  }
+}

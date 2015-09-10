@@ -1,0 +1,161 @@
+body {
+  background-color: #292b33; }
+
+@font-face {
+  src: url("fonts/Square.ttf");
+  font-family: Square; }
+@font-face {
+  src: url("fonts/Squareo.ttf");
+  font-family: Squareo; }
+@font-face {
+  src: url "fonts/PhenixAmerican.ttf";
+  font-family: PhenixAmerican; }
+/* 0.1 SLANTED CORNERS */
+/* 1.0 TODOIST LIST */
+.todoist {
+  list-style-type: none;
+  float: left; }
+  .todoist .slant-tl, .todoist .slant-tl-cover, .todoist .slant-br, .todoist .slant-br-cover {
+    width: 0;
+    height: 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    border: 15px solid transparent;
+    top: -15px;
+    left: -15px;
+    border-bottom-color: inherit; }
+  .todoist .slant-tl-cover {
+    border: 16px solid transparent;
+    border-bottom-color: #292b33;
+    top: -18px;
+    left: -18px; }
+  .todoist .slant-br, .todoist .slant-br-cover {
+    transform: rotate(135deg);
+    top: auto;
+    left: auto;
+    bottom: -15px;
+    right: -15px; }
+  .todoist .slant-br-cover {
+    border: 16px solid transparent;
+    border-bottom-color: #292b33;
+    bottom: -18px;
+    right: -18px; }
+  .todoist .action-item {
+    width: 250px;
+    height: 60px;
+    position: relative;
+    background-color: transparent;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid; }
+    .todoist .action-item p {
+      padding: 0 10px;
+      font-family: Square, sans-serif, sans-serif; }
+    .todoist .action-item .title {
+      text-align: right; }
+    .todoist .action-item .date {
+      font-size: 12px;
+      margin-top: -10px; }
+  .todoist .normal {
+    border-color: #0cc;
+    color: #0cc; }
+  .todoist .warning {
+    border-color: #f50;
+    color: #f50; }
+
+/* 2.0 CLOCK */
+#date {
+  font-family: Square, sans-serif;
+  color: white;
+  font-size: 45px;
+  float: left;
+  display: none; }
+
+/* 3.0 WEATHER */
+.weather {
+  position: relative;
+  border: 2px solid white;
+  font-family: 'Square';
+  color: white;
+  padding: 40px 20px 160px 20px;
+  float: right;
+  margin: 0 20px;
+  min-width: 230px; }
+  .weather .slant-tl, .weather .slant-tl-cover, .weather .slant-br, .weather .slant-br-cover {
+    width: 0;
+    height: 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    border: 30px solid transparent;
+    top: -30px;
+    left: -30px;
+    border-bottom-color: inherit; }
+  .weather .slant-tl-cover {
+    border: 31px solid transparent;
+    border-bottom-color: #292b33;
+    top: -33px;
+    left: -33px; }
+  .weather .slant-br, .weather .slant-br-cover {
+    transform: rotate(135deg);
+    top: auto;
+    left: auto;
+    bottom: -30px;
+    right: -30px; }
+  .weather .slant-br-cover {
+    border: 31px solid transparent;
+    border-bottom-color: #292b33;
+    bottom: -33px;
+    right: -33px; }
+  .weather p {
+    margin: 0;
+    padding: 0; }
+  .weather .city-name {
+    font-family: Squareo;
+    font-size: 30px; }
+  .weather .temp {
+    font-family: PhenixAmerican;
+    font-size: 135px;
+    letter-spacing: -3; }
+    .weather .temp .symbol {
+      font-size: 80px;
+      position: relative;
+      top: -40px;
+      left: -16px;
+      letter-spacing: -10; }
+  .weather .icons {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; }
+    .weather .icons .icon-square {
+      width: 60px;
+      height: 60px;
+      border: 2px solid white;
+      margin: 0 10px 10px 0;
+      float: left; }
+      .weather .icons .icon-square .icon, .weather .icons .icon-square .sun, .weather .icons .icon-square .cloud, .weather .icons .icon-square .rain, .weather .icons .icon-square .wind, .weather .icons .icon-square .thunderstorm, .weather .icons .icon-square .fog {
+        background: url("../img/weather.png");
+        height: 50px;
+        width: 50px;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); }
+      .weather .icons .icon-square .sun {
+        background-position: 4px 3px; }
+      .weather .icons .icon-square .cloud {
+        background-position: 42px 3px;
+        width: 42px; }
+      .weather .icons .icon-square .rain {
+        background-position: 82px 345px;
+        width: 40px; }
+      .weather .icons .icon-square .wind {
+        background-position: 80px 249px;
+        width: 39px; }
+      .weather .icons .icon-square .thunderstorm {
+        background-position: 158px 296px;
+        width: 39px; }
+      .weather .icons .icon-square .fog {
+        background-position: -80px -51px;
+        width: 39px; }
+    .weather .icons .inactive {
+      opacity: 0.3; }

@@ -1,0 +1,38 @@
+/* 0.1 SLANTED CORNERS */
+
+@mixin slant-tl ($corner-cut-side, $border) {
+  width: 0; 
+  height: 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  border: $corner-cut-side + px solid transparent;
+  top: -1 * $corner-cut-side + px;
+  left: -1 * $corner-cut-side + px;
+  border-bottom-color: inherit;
+}
+
+@mixin slant-tl-cover ($corner-cut-side, $border) {
+  @extend .slant-tl;
+  border: $corner-cut-side + 1 + px solid transparent;
+  border-bottom-color: $base-color;
+  top: -1 * $corner-cut-side - $border - 1 + px;
+  left: -1 * $corner-cut-side - $border - 1 + px;
+}
+
+@mixin slant-br ($corner-cut-side, $border) {
+  @extend .slant-tl;
+  transform: rotate(135deg);
+  top: auto;
+  left: auto;
+  bottom: -1 * $corner-cut-side + px;
+  right: -1 * $corner-cut-side + px;
+
+}
+
+@mixin slant-br-cover ($corner-cut-side, $border) {
+  @extend .slant-br;
+  border: $corner-cut-side + 1 + px solid transparent;
+  border-bottom-color: $base-color;
+  bottom: -1 * $corner-cut-side - $border - 1 + px;
+  right: -1 * $corner-cut-side - $border - 1 + px;
+}

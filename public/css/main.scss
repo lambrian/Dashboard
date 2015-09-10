@@ -1,0 +1,12 @@
+$base-color: #292b33;
+$future-block: Square, sans-serif;
+
+body {
+  background-color: $base-color;
+}
+
+@import "modules/fonts";
+@import "modules/slants";
+@import "partials/todoist";
+@import "partials/clock";
+@import "partials/weather";

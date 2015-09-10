@@ -1,0 +1,120 @@
+/* 3.0 WEATHER */
+
+$weather-slant-size: 30;
+$weather-border-width: 2;
+
+.weather {
+
+  position: relative;
+  border: $weather-border-width + px solid white;
+  font-family: 'Square';
+  color: white;
+  padding: 40px 20px 160px 20px;
+  float: right;
+  margin: 0 20px;
+  min-width: 230px;
+
+  .slant-tl {
+    @include slant-tl ($weather-slant-size, $weather-border-width);
+  }
+
+  .slant-tl-cover {
+    @include slant-tl-cover ($weather-slant-size, $weather-border-width);
+  }
+
+  .slant-br {
+    @include slant-br ($weather-slant-size, $weather-border-width);
+  }
+
+  .slant-br-cover {
+    @include slant-br-cover ($weather-slant-size, $weather-border-width);
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .city-name {
+    font-family: Squareo;
+    font-size: 30px;
+  }
+
+  .temp {
+    font-family: PhenixAmerican;
+    font-size: 135px;
+    letter-spacing: -3;
+
+    .symbol {
+      font-size: 80px;
+      position: relative;
+      top: -40px;
+      left: -16px;
+      letter-spacing: -10;
+    }
+  }
+
+  .icons {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+
+    .icon-square {
+      width: 60px;
+      height: 60px;
+      border: 2px solid white;
+      margin: 0 10px 10px 0;
+      float: left;
+
+      .icon {
+        background: url('../img/weather.png');
+        height: 50px;
+        width: 50px;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .sun {
+        @extend .icon;
+        background-position: 4px 3px;
+      }
+
+      .cloud {
+        @extend .icon;
+        background-position: 42px 3px;
+        width: 42px;
+      }
+
+      .rain {
+        @extend .icon;
+        background-position: 82px 345px;
+        width: 40px;
+      }
+
+      .wind {
+        @extend .icon;
+        background-position: 80px 249px;
+        width: 39px;
+      }
+
+      .thunderstorm {
+        @extend .icon;
+        background-position: 158px 296px;
+        width: 39px;
+      }
+
+      .fog {
+        @extend .icon;
+        background-position: -80px -51px;
+        width: 39px;
+      }
+
+    }
+
+    .inactive {
+      opacity: 0.3;
+    }
+  }
+}
