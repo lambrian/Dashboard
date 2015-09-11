@@ -1,1 +1,290 @@
-[{"data":[{"due_date":"Tue 08 Sep 2015 06:59:59 +0000","day_order":1,"assigned_by_uid":1068020,"is_archived":0,"labels":[],"sync_id":null,"postpone_count":0,"in_history":0,"indent":1,"checked":0,"date_added":"Thu 10 Sep 2015 17:46:28 +0000","date_lang":"en","id":169753066,"priority":1,"complete_count":0,"user_id":1068020,"mm_offset":-420,"is_deleted":0,"content":"3 days ago","item_order":7,"seq_no":4782802442,"responsible_uid":null,"project_id":110291372,"collapsed":0,"date_string":"7 Sep"},{"due_date":"Wed 09 Sep 2015 06:59:59 +0000","day_order":1,"assigned_by_uid":1068020,"is_archived":0,"labels":[],"sync_id":null,"postpone_count":0,"in_history":0,"indent":1,"checked":0,"date_added":"Thu 10 Sep 2015 17:28:58 +0000","date_lang":"en","id":169751970,"priority":1,"complete_count":0,"user_id":1068020,"mm_offset":-420,"is_deleted":0,"content":"2 days ago","item_order":5,"seq_no":4782697078,"responsible_uid":null,"project_id":110291372,"collapsed":0,"date_string":"8 Sep"}],"type":"overdue"},{"query":"2015-09-09T22:27:27.267Z","type":"date","data":[{"due_date":"Thu 10 Sep 2015 06:59:59 +0000","day_order":1,"assigned_by_uid":1068020,"is_archived":0,"labels":[],"sync_id":null,"postpone_count":9,"in_history":0,"indent":1,"checked":0,"date_added":"Thu 10 Sep 2015 17:13:15 +0000","date_lang":"en","id":169751042,"priority":1,"complete_count":0,"user_id":1068020,"mm_offset":-420,"is_deleted":0,"content":"yesterday task","item_order":3,"seq_no":4782696487,"responsible_uid":null,"project_id":110291372,"collapsed":0,"date_string":"9 Sep"}]},{"query":"2015-09-10T22:27:27.268Z","type":"date","data":[{"due_date":"Fri 11 Sep 2015 06:59:59 +0000","day_order":1,"assigned_by_uid":1068020,"is_archived":0,"labels":[],"sync_id":null,"postpone_count":0,"in_history":0,"indent":1,"checked":0,"date_added":"Thu 10 Sep 2015 17:22:00 +0000","date_lang":"en","id":169751547,"priority":1,"complete_count":0,"user_id":1068020,"mm_offset":-420,"is_deleted":0,"content":"today task","item_order":4,"seq_no":4782696706,"responsible_uid":null,"project_id":110291372,"collapsed":0,"date_string":"10 Sep"},{"due_date":"Fri 11 Sep 2015 06:59:59 +0000","day_order":2,"assigned_by_uid":1068020,"is_archived":0,"labels":[],"sync_id":null,"postpone_count":8,"in_history":0,"indent":1,"checked":0,"date_added":"Mon 17 Aug 2015 22:24:57 +0000","date_lang":"en","id":168142137,"priority":1,"complete_count":0,"user_id":1068020,"mm_offset":-420,"is_deleted":0,"content":"Daily Commit","item_order":14,"seq_no":4782321539,"responsible_uid":null,"project_id":142479888,"collapsed":0,"date_string":"ev day"}]},{"query":"2015-09-11T22:27:27.268Z","type":"date","data":[{"due_date":"Sat 12 Sep 2015 06:59:59 +0000","day_order":1,"assigned_by_uid":1068020,"is_archived":0,"labels":[],"sync_id":null,"postpone_count":0,"in_history":0,"indent":1,"checked":0,"date_added":"Thu 10 Sep 2015 17:29:02 +0000","date_lang":"en","id":169751974,"priority":1,"complete_count":0,"user_id":1068020,"mm_offset":-420,"is_deleted":0,"content":"tomorrow","item_order":6,"seq_no":4782697715,"responsible_uid":null,"project_id":110291372,"collapsed":0,"date_string":"11 Sep"}]},{"query":"2015-09-12T22:27:27.268Z","type":"date","data":[{"due_date":"Sun 13 Sep 2015 06:59:59 +0000","day_order":1,"assigned_by_uid":1068020,"is_archived":0,"labels":[],"sync_id":null,"postpone_count":7,"in_history":0,"indent":1,"checked":0,"date_added":"Mon 31 Aug 2015 17:11:14 +0000","date_lang":"en","id":169036765,"priority":1,"complete_count":0,"user_id":1068020,"mm_offset":-420,"is_deleted":0,"content":"Cut nails","item_order":1,"seq_no":4778094386,"responsible_uid":null,"project_id":140209158,"collapsed":0,"date_string":"every sat"}]},{"query":"2015-09-13T22:27:27.268Z","type":"date","data":[]},{"query":"2015-09-14T22:27:27.268Z","type":"date","data":[{"due_date":"Tue 15 Sep 2015 06:59:59 +0000","day_order":3,"assigned_by_uid":1068020,"is_archived":0,"labels":[],"sync_id":null,"postpone_count":2,"in_history":0,"indent":1,"checked":0,"date_added":"Mon 17 Aug 2015 22:24:38 +0000","date_lang":"en","id":168142126,"priority":1,"complete_count":0,"user_id":1068020,"mm_offset":-420,"is_deleted":0,"content":"Apply for Ally     bank","item_order":6,"seq_no":4711753427,"responsible_uid":null,"project_id":140209158,"collapsed":0,"date_string":"14     Sep"}]},{"query":"2015-09-15T22:27:27.268Z","type":"date","data":[]},{"query":"2015-09-16T22:27:27.268Z","type":"date","data":[]}] 
+[  
+   {  
+      "data":[  
+         {  
+            "due_date":"Tue 08 Sep 2015 06:59:59 +0000",
+            "day_order":1,
+            "assigned_by_uid":1068020,
+            "is_archived":0,
+            "labels":[  
+
+            ],
+            "sync_id":null,
+            "postpone_count":0,
+            "in_history":0,
+            "indent":1,
+            "checked":0,
+            "date_added":"Thu 10 Sep 2015 17:46:28 +0000",
+            "date_lang":"en",
+            "id":169753066,
+            "priority":1,
+            "complete_count":0,
+            "user_id":1068020,
+            "mm_offset":-420,
+            "is_deleted":0,
+            "content":"3 days ago",
+            "item_order":7,
+            "seq_no":4782802442,
+            "responsible_uid":null,
+            "project_id":110291372,
+            "collapsed":0,
+            "date_string":"7 Sep"
+         },
+         {  
+            "due_date":"Wed 09 Sep 2015 06:59:59 +0000",
+            "day_order":1,
+            "assigned_by_uid":1068020,
+            "is_archived":0,
+            "labels":[  
+
+            ],
+            "sync_id":null,
+            "postpone_count":0,
+            "in_history":0,
+            "indent":1,
+            "checked":0,
+            "date_added":"Thu 10 Sep 2015 17:28:58 +0000",
+            "date_lang":"en",
+            "id":169751970,
+            "priority":1,
+            "complete_count":0,
+            "user_id":1068020,
+            "mm_offset":-420,
+            "is_deleted":0,
+            "content":"2 days ago",
+            "item_order":5,
+            "seq_no":4782697078,
+            "responsible_uid":null,
+            "project_id":110291372,
+            "collapsed":0,
+            "date_string":"8 Sep"
+         }
+      ],
+      "type":"overdue"
+   },
+   {  
+      "query":"2015-09-09T22:27:27.267Z",
+      "type":"date",
+      "data":[  
+         {  
+            "due_date":"Thu 10 Sep 2015 06:59:59 +0000",
+            "day_order":1,
+            "assigned_by_uid":1068020,
+            "is_archived":0,
+            "labels":[  
+
+            ],
+            "sync_id":null,
+            "postpone_count":9,
+            "in_history":0,
+            "indent":1,
+            "checked":0,
+            "date_added":"Thu 10 Sep 2015 17:13:15 +0000",
+            "date_lang":"en",
+            "id":169751042,
+            "priority":1,
+            "complete_count":0,
+            "user_id":1068020,
+            "mm_offset":-420,
+            "is_deleted":0,
+            "content":"yesterday task",
+            "item_order":3,
+            "seq_no":4782696487,
+            "responsible_uid":null,
+            "project_id":110291372,
+            "collapsed":0,
+            "date_string":"9 Sep"
+         }
+      ]
+   },
+   {  
+      "query":"2015-09-10T22:27:27.268Z",
+      "type":"date",
+      "data":[  
+         {  
+            "due_date":"Fri 11 Sep 2015 06:59:59 +0000",
+            "day_order":1,
+            "assigned_by_uid":1068020,
+            "is_archived":0,
+            "labels":[  
+
+            ],
+            "sync_id":null,
+            "postpone_count":0,
+            "in_history":0,
+            "indent":1,
+            "checked":0,
+            "date_added":"Thu 10 Sep 2015 17:22:00 +0000",
+            "date_lang":"en",
+            "id":169751547,
+            "priority":1,
+            "complete_count":0,
+            "user_id":1068020,
+            "mm_offset":-420,
+            "is_deleted":0,
+            "content":"today task",
+            "item_order":4,
+            "seq_no":4782696706,
+            "responsible_uid":null,
+            "project_id":110291372,
+            "collapsed":0,
+            "date_string":"10 Sep"
+         },
+         {  
+            "due_date":"Fri 11 Sep 2015 06:59:59 +0000",
+            "day_order":2,
+            "assigned_by_uid":1068020,
+            "is_archived":0,
+            "labels":[  
+
+            ],
+            "sync_id":null,
+            "postpone_count":8,
+            "in_history":0,
+            "indent":1,
+            "checked":0,
+            "date_added":"Mon 17 Aug 2015 22:24:57 +0000",
+            "date_lang":"en",
+            "id":168142137,
+            "priority":1,
+            "complete_count":0,
+            "user_id":1068020,
+            "mm_offset":-420,
+            "is_deleted":0,
+            "content":"Daily Commit",
+            "item_order":14,
+            "seq_no":4782321539,
+            "responsible_uid":null,
+            "project_id":142479888,
+            "collapsed":0,
+            "date_string":"ev day"
+         }
+      ]
+   },
+   {  
+      "query":"2015-09-11T22:27:27.268Z",
+      "type":"date",
+      "data":[  
+         {  
+            "due_date":"Sat 12 Sep 2015 06:59:59 +0000",
+            "day_order":1,
+            "assigned_by_uid":1068020,
+            "is_archived":0,
+            "labels":[  
+
+            ],
+            "sync_id":null,
+            "postpone_count":0,
+            "in_history":0,
+            "indent":1,
+            "checked":0,
+            "date_added":"Thu 10 Sep 2015 17:29:02 +0000",
+            "date_lang":"en",
+            "id":169751974,
+            "priority":1,
+            "complete_count":0,
+            "user_id":1068020,
+            "mm_offset":-420,
+            "is_deleted":0,
+            "content":"tomorrow",
+            "item_order":6,
+            "seq_no":4782697715,
+            "responsible_uid":null,
+            "project_id":110291372,
+            "collapsed":0,
+            "date_string":"11 Sep"
+         }
+      ]
+   },
+   {  
+      "query":"2015-09-12T22:27:27.268Z",
+      "type":"date",
+      "data":[  
+         {  
+            "due_date":"Sun 13 Sep 2015 06:59:59 +0000",
+            "day_order":1,
+            "assigned_by_uid":1068020,
+            "is_archived":0,
+            "labels":[  
+
+            ],
+            "sync_id":null,
+            "postpone_count":7,
+            "in_history":0,
+            "indent":1,
+            "checked":0,
+            "date_added":"Mon 31 Aug 2015 17:11:14 +0000",
+            "date_lang":"en",
+            "id":169036765,
+            "priority":1,
+            "complete_count":0,
+            "user_id":1068020,
+            "mm_offset":-420,
+            "is_deleted":0,
+            "content":"Cut nails",
+            "item_order":1,
+            "seq_no":4778094386,
+            "responsible_uid":null,
+            "project_id":140209158,
+            "collapsed":0,
+            "date_string":"every sat"
+         }
+      ]
+   },
+   {  
+      "query":"2015-09-13T22:27:27.268Z",
+      "type":"date",
+      "data":[  
+
+      ]
+   },
+   {  
+      "query":"2015-09-14T22:27:27.268Z",
+      "type":"date",
+      "data":[  
+         {  
+            "due_date":"Tue 15 Sep 2015 06:59:59 +0000",
+            "day_order":3,
+            "assigned_by_uid":1068020,
+            "is_archived":0,
+            "labels":[  
+
+            ],
+            "sync_id":null,
+            "postpone_count":2,
+            "in_history":0,
+            "indent":1,
+            "checked":0,
+            "date_added":"Mon 17 Aug 2015 22:24:38 +0000",
+            "date_lang":"en",
+            "id":168142126,
+            "priority":1,
+            "complete_count":0,
+            "user_id":1068020,
+            "mm_offset":-420,
+            "is_deleted":0,
+            "content":"Apply for Ally     bank",
+            "item_order":6,
+            "seq_no":4711753427,
+            "responsible_uid":null,
+            "project_id":140209158,
+            "collapsed":0,
+            "date_string":"14     Sep"
+         }
+      ]
+   },
+   {  
+      "query":"2015-09-15T22:27:27.268Z",
+      "type":"date",
+      "data":[  
+
+      ]
+   },
+   {  
+      "query":"2015-09-16T22:27:27.268Z",
+      "type":"date",
+      "data":[  
+
+      ]
+   }
+]
