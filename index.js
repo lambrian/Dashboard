@@ -14,17 +14,17 @@ var generateDashboard = function (req, res) {
     var semaphore = dataEndpoints.length;
     var completionCallback = function () {
         semaphore -= 1;
-        if (semaphore == 0) {
+        if (semaphore === 0) {
             res.render ('index', aggregatedData, function (err, html) {
                 res.send (html);
             });
         }
-    }
+    };
 
     for (var i = 0; i < dataEndpoints.length; i++) {
         dataEndpoints[i](app, aggregatedData, completionCallback);
     }
-}
+};
 
 app.get ('/', generateDashboard);
 

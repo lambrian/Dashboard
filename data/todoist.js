@@ -8,17 +8,16 @@ var getHumanTime = function (diff) {
     if (diff === 0)
         return 'Today';
 
-    var str = '' + Math.abs(diff) + ' day';
-    if (Math.abs(diff) > 1)
-        str += 's'
-            if (diff < 0) {
-                str += ' ago';
-            } else {
-                str = 'In ' + str;
-            }
+    var absDiff = Math.abs(diff);
+    var str = '' + absDiff + ' ' + ((absDiff > 1) ? 'days' : 'day');
+    if (diff < 0) {
+        str += ' ago';
+    } else {
+        str = 'In ' + str;
+    }
 
     return str;
-}
+};
 
 var todoistModuleGeneratorFunc = function (app, dataStore, callback) {
     return function (err, resp, body) {
@@ -29,9 +28,9 @@ var todoistModuleGeneratorFunc = function (app, dataStore, callback) {
         for (var dateI = 0; dateI < groups.length; dateI++) {
             for (var taskI = 0; taskI < groups[dateI].data.length; taskI++) {
                 var currTask = groups[dateI].data[taskI];
-                var date = moment (currTask['due_date'], 'ddd, DD MMM YYYY Z').utc().subtract(7, 'hours').startOf('day');
-                currTask['humanTime'] = getHumanTime(date.diff (now, 'days'));
-                currTask['type'] = (currTask['humanTime'].match(/.*ago/)) ? 'warning' : 'normal';
+                var date = moment (currTask.due_date, 'ddd, DD MMM YYYY Z').utc().subtract(7, 'hours').startOf('day');
+                currTask.humanTime = getHumanTime(date.diff (now, 'days'));
+                currTask.type = (currTask.humanTime.match(/.*ago/)) ? 'warning' : 'normal';
                 tasks.push (currTask);
             }
         }
@@ -40,9 +39,9 @@ var todoistModuleGeneratorFunc = function (app, dataStore, callback) {
             tasks: tasks
         }, function (err, html) {
             if (err) console.log (err);
-            dataStore['todoist'] = html;
+            dataStore.todoist = html;
             callback();
-        })
+        });
     };
 };
 
