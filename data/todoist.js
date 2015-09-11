@@ -24,12 +24,12 @@ var todoistModuleGeneratorFunc = function (app, dataStore, callback) {
     return function (err, resp, body) {
 
         var groups = JSON.parse (body);
-        var now = moment().startOf('day');
+        var now = moment().utc().subtract(7, 'hours').startOf('day');
         var tasks = [];
         for (var dateI = 0; dateI < groups.length; dateI++) {
             for (var taskI = 0; taskI < groups[dateI].data.length; taskI++) {
                 var currTask = groups[dateI].data[taskI];
-                var date = moment (currTask['due_date'], 'ddd, DD MMM YYYY Z').subtract(7, 'hours').startOf('day');
+                var date = moment (currTask['due_date'], 'ddd, DD MMM YYYY Z').utc().subtract(7, 'hours').startOf('day');
                 currTask['humanTime'] = getHumanTime(date.diff (now, 'days'));
                 currTask['type'] = (currTask['humanTime'].match(/.*ago/)) ? 'warning' : 'normal';
                 tasks.push (currTask);
