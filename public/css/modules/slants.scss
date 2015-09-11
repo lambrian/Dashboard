@@ -1,9 +1,15 @@
 /* 0.1 SLANTED CORNERS */
 
+@mixin transform-rotate ($rotation) {
+  -webkit-transform: rotate($rotation); /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+      -ms-transform: rotate($rotation); /* IE 9 */
+          transform: rotate($rotation); /* IE 10, Fx 16+, Op 12.1+ */
+}
+
 @mixin slant-tl ($corner-cut-side, $border) {
   width: 0; 
   height: 0;
-  transform: rotate(-45deg);
+  @include transform-rotate(-45deg);
   position: absolute;
   border: $corner-cut-side + px solid transparent;
   top: -1 * $corner-cut-side + px;
@@ -13,15 +19,15 @@
 
 @mixin slant-tl-cover ($corner-cut-side, $border) {
   @extend .slant-tl;
-  border: $corner-cut-side + 1 + px solid transparent;
+  border: $corner-cut-side + 2 + px solid transparent;
   border-bottom-color: $base-color;
-  top: -1 * $corner-cut-side - $border - 1 + px;
-  left: -1 * $corner-cut-side - $border - 1 + px;
+  top: -1 * $corner-cut-side - $border - 3 + px;
+  left: -1 * $corner-cut-side - $border - 3 + px;
 }
 
 @mixin slant-br ($corner-cut-side, $border) {
   @extend .slant-tl;
-  transform: rotate(135deg);
+  @include transform-rotate(135deg);
   top: auto;
   left: auto;
   bottom: -1 * $corner-cut-side + px;
@@ -31,8 +37,8 @@
 
 @mixin slant-br-cover ($corner-cut-side, $border) {
   @extend .slant-br;
-  border: $corner-cut-side + 1 + px solid transparent;
+  border: $corner-cut-side + 2 + px solid transparent;
   border-bottom-color: $base-color;
-  bottom: -1 * $corner-cut-side - $border - 1 + px;
-  right: -1 * $corner-cut-side - $border - 1 + px;
+  bottom: -1 * $corner-cut-side - $border - 3 + px;
+  right: -1 * $corner-cut-side - $border - 3 + px;
 }

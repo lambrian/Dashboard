@@ -73,7 +73,7 @@ $weather-border-width: 2;
         margin: 0 auto;
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        @include transformTranslateY(-50%);
       }
 
       .sun {

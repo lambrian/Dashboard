@@ -10,7 +10,7 @@ body {
   font-family: Squareo; }
 
 @font-face {
-  src: url "fonts/PhenixAmerican.ttf";
+  src: url("fonts/PhenixAmerican.ttf");
   font-family: PhenixAmerican; }
 
 /* 0.1 SLANTED CORNERS */
@@ -21,28 +21,38 @@ body {
   .todoist .slant-tl, .todoist .slant-tl-cover, .todoist .slant-br, .todoist .slant-br-cover {
     width: 0;
     height: 0;
+    -webkit-transform: rotate(-45deg);
+    /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+    -ms-transform: rotate(-45deg);
+    /* IE 9 */
     transform: rotate(-45deg);
+    /* IE 10, Fx 16+, Op 12.1+ */
     position: absolute;
     border: 15px solid transparent;
     top: -15px;
     left: -15px;
     border-bottom-color: inherit; }
   .todoist .slant-tl-cover {
-    border: 16px solid transparent;
+    border: 17px solid transparent;
     border-bottom-color: #292b33;
-    top: -18px;
-    left: -18px; }
+    top: -20px;
+    left: -20px; }
   .todoist .slant-br, .todoist .slant-br-cover {
+    -webkit-transform: rotate(135deg);
+    /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+    -ms-transform: rotate(135deg);
+    /* IE 9 */
     transform: rotate(135deg);
+    /* IE 10, Fx 16+, Op 12.1+ */
     top: auto;
     left: auto;
     bottom: -15px;
     right: -15px; }
   .todoist .slant-br-cover {
-    border: 16px solid transparent;
+    border: 17px solid transparent;
     border-bottom-color: #292b33;
-    bottom: -18px;
-    right: -18px; }
+    bottom: -20px;
+    right: -20px; }
   .todoist .action-item {
     width: 250px;
     height: 60px;
@@ -87,28 +97,38 @@ body {
   .weather .slant-tl, .weather .slant-tl-cover, .weather .slant-br, .weather .slant-br-cover {
     width: 0;
     height: 0;
+    -webkit-transform: rotate(-45deg);
+    /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+    -ms-transform: rotate(-45deg);
+    /* IE 9 */
     transform: rotate(-45deg);
+    /* IE 10, Fx 16+, Op 12.1+ */
     position: absolute;
     border: 30px solid transparent;
     top: -30px;
     left: -30px;
     border-bottom-color: inherit; }
   .weather .slant-tl-cover {
-    border: 31px solid transparent;
+    border: 32px solid transparent;
     border-bottom-color: #292b33;
-    top: -33px;
-    left: -33px; }
+    top: -35px;
+    left: -35px; }
   .weather .slant-br, .weather .slant-br-cover {
+    -webkit-transform: rotate(135deg);
+    /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+    -ms-transform: rotate(135deg);
+    /* IE 9 */
     transform: rotate(135deg);
+    /* IE 10, Fx 16+, Op 12.1+ */
     top: auto;
     left: auto;
     bottom: -30px;
     right: -30px; }
   .weather .slant-br-cover {
-    border: 31px solid transparent;
+    border: 32px solid transparent;
     border-bottom-color: #292b33;
-    bottom: -33px;
-    right: -33px; }
+    bottom: -35px;
+    right: -35px; }
   .weather p {
     margin: 0;
     padding: 0; }
@@ -142,6 +162,8 @@ body {
         margin: 0 auto;
         position: relative;
         top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
         transform: translateY(-50%); }
       .weather .icons .icon-square .sun {
         background-position: 4px 3px; }

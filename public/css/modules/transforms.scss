@@ -1,0 +1,5 @@
+@mixin transformTranslateY($percent) {
+  -webkit-transform: translateY($percent);
+      -ms-transform: translateY($percent);
+          transform: translateY($percent);
+}
