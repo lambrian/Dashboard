@@ -69,6 +69,14 @@ body {
     .todoist .action-item .date {
       font-size: 12px;
       margin-top: -10px; }
+  .todoist .indent-1 {
+    margin-left: 0; }
+  .todoist .indent-2 {
+    margin-left: 40; }
+  .todoist .indent-3 {
+    margin-left: 80; }
+  .todoist .indent-4 {
+    margin-left: 120; }
   .todoist .normal {
     border-color: #9fc;
     color: #0cc; }
